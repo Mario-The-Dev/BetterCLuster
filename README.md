@@ -1,2 +1,3 @@
 # BetterCLuster
-A better version of the Cluster-Terminal
+A new and improved version of Cluster-Terminal
+Cluster-Terminal - 
