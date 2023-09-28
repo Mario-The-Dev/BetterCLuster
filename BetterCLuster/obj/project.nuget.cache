@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "osk8JdRxhHXX4yno0yh46lnXHESAAWYseIIQI/HkL0odKirNjppamVRMCnN/sny3u1UMrJBy9WRcLdF2ckczUw==",
+  "success": true,
+  "projectFilePath": "E:\\BetterCLuster\\BetterCLuster\\BetterCLuster.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mario\\.nuget\\packages\\dynamiclanguageruntime\\1.3.4\\dynamiclanguageruntime.1.3.4.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\ironpython\\3.4.1\\ironpython.3.4.1.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\mono.unix\\7.1.0-final.1.21458.1\\mono.unix.7.1.0-final.1.21458.1.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\spectre.console\\0.47.1-preview.0.25\\spectre.console.0.47.1-preview.0.25.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.management\\7.0.1\\system.management.7.0.1.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.speech\\7.0.0\\system.speech.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
