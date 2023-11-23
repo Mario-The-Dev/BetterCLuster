@@ -64,7 +64,6 @@ namespace CommandHandlerNamespace
                     {"shr -run",new shortRun_Run()},
                     {"shr -create",new shortRun_Create()},
                     {"visel",new Visel()},
-                    {"pswrd",new PswrdsCommand()},
                     {"productitracker",new ProductiTrackerCommand()},
                     {"calendar",new CalendarNow()},
                     //{"",new ()},
