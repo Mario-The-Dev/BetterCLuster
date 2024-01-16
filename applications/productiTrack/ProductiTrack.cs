@@ -61,7 +61,7 @@ namespace BetterCLuster.application.ProductiTracker
 
         private static void TaskLogger(string Text)
         {
-            using (StreamWriter sw = File.AppendText(@$"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt"))
+            using (StreamWriter sw = File.AppendText(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt"))
             {
                 sw.WriteLine($"{DateTime.Now} | {Text}");
                 DRY.Completed($"LOGGED SUCCESSFULLY '{DateTime.Now} | {Text}'");
@@ -71,7 +71,7 @@ namespace BetterCLuster.application.ProductiTracker
         private static void ReadLog()
         {
             UI.Header("Start of Log File", "lime");
-            string[] logged = File.ReadAllLines(@$"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt");
+            string[] logged = File.ReadAllLines(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt");
             foreach (string log in logged)
             {
                 Console.WriteLine(log);
@@ -81,7 +81,7 @@ namespace BetterCLuster.application.ProductiTracker
 
         private static void ResetLog()
         {
-            File.Delete(@$"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt");
+            File.Delete(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\tasks.txt");
             DRY.Completed("Log Reseted");
         }
 

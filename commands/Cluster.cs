@@ -154,7 +154,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
         public void Execute()
         {
             string CurrentDir = Directory.GetCurrentDirectory();
-            using (StreamWriter sw = File.AppendText($@"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\ls-export.txt"))
+            using (StreamWriter sw = File.AppendText($@"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs\ls-export.txt"))
             {
                 sw.WriteLine("----- Files in the current directory -----");
                 string[] files = Directory.GetFiles(CurrentDir);

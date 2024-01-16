@@ -41,7 +41,7 @@ namespace BetterCLuster.application.shortRun
                 
                 if (File.Exists(PathToExecutable))
                 {
-                    nameOfTheShortCut_Path = @$"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\ShortCuts\"+ShortCutName;
+                    nameOfTheShortCut_Path = @$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\ShortCuts\"+ShortCutName;
                     using (StreamWriter sw = new StreamWriter(nameOfTheShortCut_Path))
                     {
                         sw.WriteLine($"{PathToExecutable}");
@@ -59,7 +59,7 @@ namespace BetterCLuster.application.shortRun
 
         public static void runShortCut()
         {                                                                   
-            List<string> shortcutfiles = new List<string>(Directory.GetFiles(@$"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\ShortCuts"));
+            List<string> shortcutfiles = new List<string>(Directory.GetFiles(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\ShortCuts"));
             string name = UI.SelectionPrompt("Select a Shortcut", shortcutfiles);
 
             if (shortcutfiles.Contains(name))
