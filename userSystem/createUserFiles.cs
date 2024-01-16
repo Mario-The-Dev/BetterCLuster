@@ -13,7 +13,7 @@ namespace createFilesAndDirectoriesForUser
             try
             {
                 UserSystem userSystem = new UserSystem();
-                Directory.SetCurrentDirectory(@"C:\Users\mario\AppData\Roaming\BetterCLuster\Users");
+                Directory.SetCurrentDirectory(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users");
                 DRY.Progress($"Creating Directory {USERNAME}");
                 Directory.CreateDirectory(USERNAME);
                 Directory.SetCurrentDirectory(USERNAME);

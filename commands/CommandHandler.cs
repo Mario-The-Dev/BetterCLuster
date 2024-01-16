@@ -5,7 +5,6 @@ using BetterCLuster.Commands.external;
 using BetterCLuster.Commands.hostOS;
 using BetterCLuster.application.visel;
 using BetterCLuster.application.shortRun;
-using BetterCLuster.application.ClusterPasswords;
 using BetterCLuster.application.ProductiTracker;
 
 namespace CommandHandlerNamespace

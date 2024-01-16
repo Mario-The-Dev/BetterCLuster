@@ -11,10 +11,10 @@ namespace LoginSystem
     {
         public static void Login(string USERNAME, string PASSWORD)
         {
-            Directory.SetCurrentDirectory(@"C:\Users\mario\AppData\Roaming\BetterCLuster\Users");
+            Directory.SetCurrentDirectory(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users");
             if (Directory.Exists(USERNAME))
             {
-                Directory.SetCurrentDirectory($@"C:\Users\mario\AppData\Roaming\BetterCLuster\Users\{USERNAME}\Info");
+                Directory.SetCurrentDirectory($@"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{USERNAME}\Info");
                 string[] infoLines = File.ReadAllLines("infoFILE");
                 if (CreateFilesAndDirectoriesForUser.EncryptSHA256(PASSWORD) ==  infoLines[2])
                 {
