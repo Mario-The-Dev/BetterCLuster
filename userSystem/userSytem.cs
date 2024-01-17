@@ -32,7 +32,7 @@ namespace userSystem
                 string passwordHash = UI.Propmt("Confirm Password", "lime", "white", true);
                 if (passwordHash == password)
                 {
-                    Console.Write($"A new user of the name {fullName} will be created, /n a directory will be created for the user all output files created by the user will be stored there. \n Are you sure you want to create this new user(y/n): ");
+                    Console.Write($"A new user with the username '{username}' will be created,\nand a directory will be created for this user which will be used to store all output files created by this users. \nAre you sure you want to create this new user(y/n): ");
                     string confirm = Console.ReadLine();
                     if (confirm == "y" || confirm == "Y")
                     {

@@ -64,6 +64,40 @@ namespace BetterCLuster.Commands.ClusterExpCommands
         }
     }
 
+    public class GetOutputs : ICommand
+    {
+        public void Execute()
+        {
+            var table = new Table();
+            string CurrentDir = Directory.GetCurrentDirectory();
+            string[] files = Directory.GetFiles(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users\{Global.currentLoggedUser}\Outputs");
+            if (files.Length == 0)
+            {
+                AnsiConsole.Write(Align.Left(new Markup("[red] No output files were found [/]")));
+            }else
+            {
+                table.AddColumn("Name");
+                table.AddColumn("Access Command");
+                table.AddColumn("Purpose");
+                table.AddColumn("Last Updated");
+                table.AddColumn("Size");
+                //tasks.txt, ls-export.txt
+                foreach (string file in files)
+                {
+                    FileInfo fileInfo = new FileInfo(file);
+                    if (Path.GetFileNameWithoutExtension(file) == "tasks.txt")
+                    {
+                        table.AddRow("Tasks", "productitracker", "As a task list", $"{File.GetLastAccessTime(file)}", $"{fileInfo.Length / 1024} KB");
+                    }else if (Path.GetFileNameWithoutExtension(file) == "ls-export.txt")
+                    {
+                        table.AddRow("ls export", "cat", "Exported list of directories & files", $"{File.GetLastAccessTime(file)}", $"{fileInfo.Length / 1024} KB");
+                    }
+                }
+                AnsiConsole.Write(table);
+            }
+        }
+    }
+
     public class ListAll : ICommand
     {
         public void Execute()

@@ -38,7 +38,7 @@ namespace BetterCLuster.Commands.application
             AnsiConsole.WriteLine();
             List<string> info = new List<string>();
             info.Add($"Description : BetterCLuster is a Terminal based on the Cluster-Terminal. I know it's weird bascially BetterCLuster is sequel to Cluster-Terminal");
-            info.Add($"Build Name : {Global.Build}");
+            info.Add($"Version : {Global.Build}");
             info.Add($"Made on : 29/04/2023");
             info.Add($"lang written on : C#(C sharp)");
             info.Add($"File Manager : Cluster v3.0");

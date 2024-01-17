@@ -63,7 +63,7 @@ namespace BetterCLuster.Setup
                 AnsiConsole.Write(Align.Center(new Markup("Spectre.Console, Spectre.Console.ImageSharp, IronPython")));
                 Console.Write($"\n");
                 UI.Header("Setup", "lime");
-                AnsiConsole.Write(Align.Center(new Markup("All Program Files will be Created at [red]%AppData% Directory[/]. Outputs from BetterCLuster can be accessed by logining to that user's account & executing the [white bold]'outputs'[/] command.")));
+                AnsiConsole.Write(Align.Center(new Markup("All Program Files will be Created at [red]%AppData% Directory[/]. Outputs from BetterCLuster can be accessed by login to that user's account & executing the [white bold]'outputs'[/] command.")));
                 Console.Write($"\n");
                 Console.Write($"\n");
                 AnsiConsole.Write(Align.Center(new Markup("[lime] [[ENTER]] Key to Continue the Setup Process [/]")));

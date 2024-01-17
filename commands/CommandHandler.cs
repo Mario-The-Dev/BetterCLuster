@@ -24,6 +24,7 @@ namespace CommandHandlerNamespace
                     {"cls", new Clear()},
                     {"::info", new Info()},
                     {"now", new DateAndTime()},
+                    {"outputs", new GetOutputs()},
                     {"ls", new ListAll()},
                     {"ls -f", new ListAllFiles()},
                     {"ls -dir", new ListAllDirectories()},
