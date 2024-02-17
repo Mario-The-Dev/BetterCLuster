@@ -105,7 +105,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             var table = new Table();
             string CurrentDir = Directory.GetCurrentDirectory();
             string[] files = Directory.GetFiles(CurrentDir);
-            string[] dirs = Directory.GetDirectories(CurrentDir);
+            //string[] dirs = Directory.GetDirectories(CurrentDir);
             table.AddColumn("Name");
             table.AddColumn("Type");
             table.AddColumn("Date Modified");
@@ -114,12 +114,12 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                table.AddRow(Path.GetFileNameWithoutExtension(file), Path.GetExtension(file), $"{File.GetLastAccessTime(file)}", $"{File.GetCreationTime(file)}", $"{fileInfo.Length / 1024} KB");
+                table.AddRow(Path.GetFileNameWithoutExtension(file).Replace("[", "[[").Replace("]", "]]"), Path.GetExtension(file), $"{File.GetLastAccessTime(file)}", $"{File.GetCreationTime(file)}", $"{fileInfo.Length / 1024} KB");
             }
-            foreach (string dir in dirs)
+            foreach (string dir in Directory.EnumerateDirectories(CurrentDir))
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(dir);
-                table.AddRow(Path.GetFileNameWithoutExtension(dir), "Directory", $"{File.GetLastAccessTime(dir)}", $"{File.GetCreationTime(dir)}", $" - ");
+                table.AddRow(Path.GetFileName(dir).Replace("[", "[[").Replace("]", "]]"), "Directory", $"{File.GetLastAccessTime(dir)}", $"{File.GetCreationTime(dir)}", $" - ");
             }
             AnsiConsole.Write(table);
         }
@@ -140,7 +140,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                table.AddRow(Path.GetFileNameWithoutExtension(file), Path.GetExtension(file), $"{File.GetLastAccessTime(file)}", $"{File.GetCreationTime(file)}", $"{fileInfo.Length / 1024} KB");
+                table.AddRow(Path.GetFileNameWithoutExtension(file).Replace("[", "[[").Replace("]", "]]"), Path.GetExtension(file), $"{File.GetLastAccessTime(file)}", $"{File.GetCreationTime(file)}", $"{fileInfo.Length / 1024} KB");
             }
             AnsiConsole.Write(table);
         }
@@ -160,7 +160,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             foreach (string dir in dirs)
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(dir);
-                table.AddRow(Path.GetFileNameWithoutExtension(dir), "Directory", $"{File.GetLastAccessTime(dir)}", $"{File.GetCreationTime(dir)}", $" - ");
+                table.AddRow(Path.GetFileName(dir).Replace("[", "[[").Replace("]", "]]"), "Directory", $"{File.GetLastAccessTime(dir)}", $"{File.GetCreationTime(dir)}", $" - ");
             }
             AnsiConsole.Write(table);
         }
@@ -306,7 +306,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             string[] directories = Directory.GetDirectories(Directory.GetCurrentDirectory(), $"*{inputDir}*.*", SearchOption.TopDirectoryOnly);
             foreach (string directory in directories)
             {
-                table.AddRow(directory);
+                table.AddRow(directory.Replace("[", "[[").Replace("]", "]]"));
             }
             AnsiConsole.Write(table);
             Console.WriteLine($"\nFound {directories.Length} Directories with the keyword '{inputDir}'");
@@ -325,7 +325,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             string[] files = Directory.GetFiles(Directory.GetCurrentDirectory(), $"*{inputFile}*.*", SearchOption.TopDirectoryOnly);
             foreach (string file in files)
             {
-                table.AddRow(file);
+                table.AddRow(file.Replace("[", "[[").Replace("]", "]]"));
             }
             AnsiConsole.Write(table);
             Console.WriteLine($"\nFound {files.Length} Files with the keyword '{inputFile}'");
@@ -497,7 +497,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
 
             foreach (string file in files)
             {
-                Console.WriteLine($"{file,-80}{File.GetLastAccessTime(file),30}{File.GetCreationTime(file),30}");
+                Console.WriteLine($"{file.Replace("[", "[[").Replace("]", "]]"),-80}{File.GetLastAccessTime(file),30}{File.GetCreationTime(file),30}");
             }
             Console.WriteLine($"\nFound {files.Length} Files with the keyword '{inputFile}'");
         }
@@ -513,7 +513,7 @@ namespace BetterCLuster.Commands.ClusterExpCommands
             string[] directories = Directory.GetDirectories(Directory.GetCurrentDirectory(), $"*{inputDir}*.*", SearchOption.AllDirectories);
             foreach (string directory in directories)
             {
-                Console.WriteLine($"{directory,-80}{Directory.GetLastAccessTime(directory),30}{Directory.GetCreationTime(directory),30}");
+                Console.WriteLine($"{directory.Replace("[", "[[").Replace("]", "]]"),-80}{Directory.GetLastAccessTime(directory),30}{Directory.GetCreationTime(directory),30}");
             }
             Console.WriteLine($"\nFound {directories.Length} Directories with the keyword '{inputDir}'");
         }
