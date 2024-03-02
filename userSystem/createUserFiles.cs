@@ -3,6 +3,7 @@ using userSystem;
 using System.Security.Cryptography;
 using ScriptEx;
 using System.Text;
+using BetterCLuster.Program.use.only.global;
 
 namespace createFilesAndDirectoriesForUser
 {
@@ -13,7 +14,7 @@ namespace createFilesAndDirectoriesForUser
             try
             {
                 UserSystem userSystem = new UserSystem();
-                Directory.SetCurrentDirectory(@$"C:\Users\{Environment.UserName}\AppData\Roaming\BetterCLuster\Users");
+                Directory.SetCurrentDirectory(Global.AppDataPath + @"\Users");
                 DRY.Progress($"Creating Directory {USERNAME}");
                 Directory.CreateDirectory(USERNAME);
                 Directory.SetCurrentDirectory(USERNAME);
@@ -23,6 +24,8 @@ namespace createFilesAndDirectoriesForUser
                 Directory.CreateDirectory("Inputs");
                 DRY.Progress($"Creating Directory 'ShortCuts'");
                 Directory.CreateDirectory("ShortCuts");
+                DRY.Progress($"Creating Directory 'PerplexGroups'");
+                Directory.CreateDirectory("PerplexGroups");
                 DRY.Progress($"Creating Directory 'Info'");
                 Directory.CreateDirectory("Info");
                 Directory.SetCurrentDirectory("Info");

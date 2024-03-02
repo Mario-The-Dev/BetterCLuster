@@ -6,27 +6,6 @@ using BetterCLuster.Program.use.only.ui;
 using ScriptEx;
 using Spectre.Console;
 
-namespace BetterCLuster.Commands.ClusterExplorer
-{
-    public class Experi : ICommand
-    {
-        public void Execute()
-        {
-            ClusterExplorerSystem.ListAndSelection();
-        }
-    }
-
-    public class ClusterExplorerSystem
-    {
-        public static void ListAndSelection()
-        {
-            
-        }
-
-    }
-}
-
-
 namespace BetterCLuster.Commands.ClusterExpCommands
 {
     public class CompareText : ICommand

@@ -5,7 +5,7 @@ using BetterCLuster.Commands.external;
 using BetterCLuster.Commands.hostOS;
 using BetterCLuster.application.visel;
 using BetterCLuster.application.shortRun;
-using BetterCLuster.application.ProductiTracker;
+using BetterCLuster.application.Perplex;
 
 namespace CommandHandlerNamespace
 {
@@ -64,7 +64,7 @@ namespace CommandHandlerNamespace
                     {"shr -run",new shortRun_Run()},
                     {"shr -create",new shortRun_Create()},
                     {"visel",new Visel()},
-                    {"productitracker",new ProductiTrackerCommand()},
+                    {"perplex",new PerplexCommand()},
                     {"calendar",new CalendarNow()},
                     //{"",new ()},
                     

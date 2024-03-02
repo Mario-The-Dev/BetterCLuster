@@ -23,8 +23,7 @@ namespace BetterCLuster.Setup
             string currentProcessName = Process.GetCurrentProcess().ProcessName;
             bool isFirstRun = IsFirstRun(currentProcessName);
 
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string AppDataPath = Path.Combine(appDataPath, "BetterCLuster");
+            string AppDataPath = Global.AppDataPath;
             
             if (isFirstRun)
             {
@@ -58,12 +57,12 @@ namespace BetterCLuster.Setup
                 AnsiConsole.Write(Align.Center(new Markup("Welcome to BetterCLuster! Elevate your command-line experience with Spectre.Console and Spectre.Console.ImageSharp. Get ready to supercharge productivity. Installation is easy, and you're just moments away from a powerful CLI experience. Let's dive in! \n [bold white]Using a nerd font is highly recommended.[/]")));
                 Console.Write($"\n");
                 UI.Header("Credits", "lime");
-                AnsiConsole.Write(Align.Center(new Markup("Programming: [link=https://mario-the-dev.github.io/]Mario-The-Dev[/]")));
+                AnsiConsole.Write(Align.Center(new Markup("[link=https://mario-the-dev.github.io/]Mario-The-Dev[/]")));
                 AnsiConsole.Write(Align.Center(new Markup("[lime bold] Libraries [/]")));
-                AnsiConsole.Write(Align.Center(new Markup("Spectre.Console, Spectre.Console.ImageSharp, IronPython")));
+                AnsiConsole.Write(Align.Center(new Markup("Spectre.Console, Spectre.Console.ImageSharp")));
                 Console.Write($"\n");
                 UI.Header("Setup", "lime");
-                AnsiConsole.Write(Align.Center(new Markup("All Program Files will be Created at [red]%AppData% Directory[/]. Outputs from BetterCLuster can be accessed by login to that user's account & executing the [white bold]'outputs'[/] command.")));
+                AnsiConsole.Write(Align.Center(new Markup("All Program Files will be Created at [red]%AppData% Directory[/]. Outputs from BetterCLuster can be accessed by login to that user's account and executing the [white bold]'outputs'[/] command.")));
                 Console.Write($"\n");
                 Console.Write($"\n");
                 AnsiConsole.Write(Align.Center(new Markup("[lime] [[ENTER]] Key to Continue the Setup Process [/]")));
@@ -90,7 +89,7 @@ namespace BetterCLuster.Setup
         public static void CreateFoldersAndFiles()
         {
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string AppDataPath = Path.Combine(appDataPath, "BetterCLuster");
+            string AppDataPath = Global.AppDataPath;
             Directory.SetCurrentDirectory(appDataPath);
             Directory.CreateDirectory(AppDataPath);
             Directory.SetCurrentDirectory(AppDataPath);

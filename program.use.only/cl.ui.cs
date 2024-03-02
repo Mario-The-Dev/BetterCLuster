@@ -138,7 +138,7 @@ namespace BetterCLuster.Program.use.only.ui
                     isAdminHeader = "In default mode";
                 }
                 Console.ForegroundColor = ConsoleColor.Gray;
-                AnsiConsole.Write(new Markup($"[[ Build Name : {Global.Build} v{Global.version} │ {isAdminHeader} │ [red]{Global.Reminder}[/] │ {BatteryInfo[0]}% ]]"));Console.Write($"\n");
+                AnsiConsole.Write(new Markup($"[[ Version : v{Global.version} │ {isAdminHeader} │ [red]{Global.Reminder}[/] │ {BatteryInfo[0]}% ]]"));Console.Write($"\n");
                 Console.WriteLine($"├───[cd : {Directory.GetCurrentDirectory()} │ {Global.currentLoggedUser}]");
                 Console.WriteLine($"│");
                 Console.Write($"└───{isAdminpropmt} ");
